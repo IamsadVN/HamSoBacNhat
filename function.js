@@ -39,4 +39,3 @@ export function laygiatriY(strConstan,xValues) {
 
     return result;
 }
-

@@ -5,7 +5,7 @@ import fs from "fs";
 import { createCanvas } from "canvas";
 import { Chart } from "chart.js/auto";
 
-const canvas = createCanvas(800,600);
+const canvas = createCanvas(600,800);
 const ctx = canvas.getContext('2d');
 
 //Dữ liệu của biểu đồ
@@ -13,7 +13,7 @@ let xValues = laygiatriX(conf.start,conf.end,conf.step);
 let yValuesOfParabol = laygiatriY(conf.parabol,xValues);
 let yValuesOfLine = laygiatriY(conf.line,xValues);
 
-//In ra bảng giá trị
+// //In ra bảng giá trị
 const temp = [
     xValues,
     yValuesOfParabol,
@@ -23,10 +23,10 @@ console.log(table(temp));
 
 //Data ben Chart.js
 const dataOfChart = {
-    label: xValues,
+    labels: xValues,
     datasets: [
         {
-            label: `${conf.parabol}`,
+            label: conf.parabol,
             data: yValuesOfParabol,
             fill: true,
             borderColor: `rgb(75,192,192)`,
@@ -34,7 +34,7 @@ const dataOfChart = {
             //borderWidth: 1
         },
         {
-            label: `${conf.line}`,
+            label: conf.line,
             data: yValuesOfLine,
             fill: false,
             borderColor: `rgb(255,69,0)`,
@@ -61,13 +61,15 @@ const configOfChart = {
                 }
             },
             y: {
-                beginAtZero: false
+                beginAtZero: true,
+                ticks: {
+                    stepSize: 1
+                }
             }
         }
     }
 };
 
 const myChart = new Chart(ctx,configOfChart);
-
 const imageBuffer = canvas.toBuffer();
 fs.writeFileSync('myChart.png', imageBuffer);
