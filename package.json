@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "canvas": "^2.11.2",
+    "chart.js": "^4.4.2",
+    "mathjs": "^12.4.2",
+    "table": "^6.8.2"
+  },
+  "type": "module"
+}
