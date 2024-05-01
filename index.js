@@ -3,7 +3,7 @@ import { laygiatriX, laygiatriY } from "./function.js";
 import { table } from "table";
 import fs from "fs";
 import { createCanvas } from "canvas";
-import { Chart, Title, plugins, scales } from "chart.js/auto";
+import { Chart } from "chart.js/auto";
 
 const canvas = createCanvas(800,600);
 const ctx = canvas.getContext('2d');
@@ -51,7 +51,7 @@ const configOfChart = {
         plugins: {
             title: {
                 display: true,
-                text: "Hệ trục tọa độ"
+                text: "Hệ trục tọa độ của Parabol và Đường Thẳng"
             }
         },
         scales: {
