@@ -51,7 +51,7 @@ const configOfChart = {
         plugins: {
             title: {
                 display: true,
-                text: "Hệ trục tọa độ của Parabol và Đường Thẳng"
+                text: "Hệ trục tọa độ"
             }
         },
         scales: {

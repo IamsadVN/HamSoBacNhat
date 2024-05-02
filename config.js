@@ -1,6 +1,6 @@
 const conf = {
-    parabol: "y = -x^2 / 4",
-    line: "y = -3x/4",
+    parabol: "y = x^2 / 2",
+    line: "y = 1/2*x+6",
     start: -5,
     end: 5,
     step: 1
